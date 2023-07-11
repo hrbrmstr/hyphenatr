@@ -3,7 +3,6 @@
 \docType{package}
 \name{hyphenatr}
 \alias{hyphenatr}
-\alias{hyphenatr-package}
 \title{Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library}
 \description{
 Identifying hyphenation points in strings can be useful for both

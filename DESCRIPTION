@@ -1,7 +1,7 @@
 Package: hyphenatr
 Encoding: UTF-8
 Title: Tools to Hyphenate Strings Using the 'Hunspell' Hyphenation Library
-Version: 0.4.2
+Version: 0.4.1
 Date: 2019-04-14
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")),
@@ -35,5 +35,5 @@ Suggests:
 Imports:
     Rcpp,
     stringi
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.3
 LinkingTo: Rcpp

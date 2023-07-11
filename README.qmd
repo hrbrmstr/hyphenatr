@@ -1,0 +1,91 @@
+---
+format: gfm
+editor_options: 
+  chunk_output_type: console
+---
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
+```
+
+```{r badges, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::stinking_badges()
+```
+
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
+
+## Special thanks to
+
+- @daroczig & @edwindj for language testing.
+
+## What's Inside The Tin
+
+The following functions are implemented:
+
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
+```
+
+## Installation
+
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
+```
+
+## Usage
+
+```{r lib-ex}
+library(hyphenatr)
+
+# current version
+packageVersion("hyphenatr")
+
+```
+
+
+```{r ex-01}
+library(jsonlite)
+library(microbenchmark)
+
+# current verison
+packageVersion("hyphenatr")
+
+list_dicts()
+
+curr_dict()
+
+# test word list (10K words)
+dat <- readLines(system.file("extdata/top10000en.txt", package="hyphenatr"))
+
+microbenchmark(out1 <- hyphenate(dat))
+
+out1[500:550]
+
+microbenchmark(out2 <- hyphenate(dat, simplify=FALSE))
+
+jsonlite::toJSON(out2[530:540], pretty=TRUE)
+
+microbenchmark(out3 <- hyphenate(dat, simplify="-"))
+
+out3[500:550]
+
+microbenchmark(out4 <- hyphenate(dat, simplify="&shy;"))
+
+out4[500:550]
+
+switch_dict("de_DE")
+
+hyphenate("tägelîch")
+```
+
+## hhhash Metrics
+
+```{r cloc, echo=FALSE}
+cloc::cloc_pkg_md()
+```
+
+## Code of Conduct
+
+Please note that this project is released with a Contributor Code of Conduct. 
+By participating in this project you agree to abide by its terms.
